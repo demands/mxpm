@@ -1,19 +1,19 @@
 {
   "name": "mxpm",
-  "main": "./lib/mxpm",
-  "version": "0.0.0",
-  "description": "A short description of your package",
-  "keywords": [
-  ],
+  "main": "./lib/main",
+  "version": "1.0.0",
+  "description": "Quickly toggle the active paths in your project using a fuzzy finder",
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "mxpm:toggle"
   },
-  "repository": "https://github.com/atom/mxpm",
+  "repository": "https://github.com/demands/mxpm",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "atom-space-pen-views": "^2.0.0"
   }
 }

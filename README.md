@@ -1,5 +1,9 @@
-# mxpm package
+# mxpm
 
-A short description of your package.
+Quickly toggle the active paths in your project using the fuzzy finder.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+### a quick disclaimer
+
+mxpm is my very first atom package, and I'm currently still figuring out how it all works. As such, don't expect much.
+On the other hand, I'm pretty attached to this flow (quickly adding and removing projects from my sidebar seems extremely useful!) so odds are that I will continue maintaining this package unless someone else writes something better.
+~Max
