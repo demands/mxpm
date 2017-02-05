@@ -1,7 +1,7 @@
 {
   "name": "mxpm",
   "main": "./lib/main",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Quickly toggle the active paths in your project using a fuzzy finder",
   "keywords": [],
   "activationCommands": {
