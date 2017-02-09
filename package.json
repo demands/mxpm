@@ -15,5 +15,13 @@
   "dependencies": {
     "async": "^2.1.4",
     "atom-space-pen-views": "^2.0.0"
+  },
+  "configSchema": {
+    "projectRoot": {
+      "type": "string",
+      "default": "",
+      "title": "Project Root",
+      "description": "The folder where your projects are located. Defaults to $PROJECTS env if set, otherwise to your home directory."
+    }
   }
 }
