@@ -4,12 +4,14 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
+@currently-open-background-color: average(@background-color-info, @base-background-color);
+
 .select-list.mxpm-path-list {
   ol.list-group li.is-open {
-    background: rgba(99, 43, 161, 0.16);
+    background: @currently-open-background-color;
     
     &.selected {
-      background: rgba(99, 43, 161, 0.50);
+      background: lighten(@currently-open-background-color, 5%);
     }
   }
 }
