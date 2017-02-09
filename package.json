@@ -21,7 +21,7 @@
       "type": "string",
       "default": "",
       "title": "Project Root",
-      "description": "The folder where your projects are located. Defaults to $PROJECTS env if set, otherwise to your home directory."
+      "description": "A comma separated list of folders that contain your projects (that is, folders OF projects, not folders FOR projects). If left empty, we'll use the $PROJECTS env variable if set, otherwise your home directory."
     }
   }
 }
