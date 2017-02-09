@@ -18,11 +18,11 @@
     "lodash": "^4.17.4"
   },
   "configSchema": {
-    "projectRoot": {
+    "projectHomes": {
       "type": "string",
       "default": "",
-      "title": "Project Root",
-      "description": "A comma separated list of folders that contain your projects (that is, folders OF projects, not folders FOR projects). If left empty, we'll use the $PROJECTS env variable if set, otherwise your home directory."
+      "title": "Project Homes",
+      "description": "A comma separated list of folders that contain your projects (that is, folders OF projects, not folders FOR projects). If left empty, we'll use the atom projectHome setting if set, otherwise the $PROJECTS env variable if set, otherwise your home directory."
     }
   }
 }
