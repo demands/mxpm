@@ -8,7 +8,11 @@
           "submenu": [
             {
               "label": "Toggle Path List",
-              "command": "mxpm:togglePathList"
+              "command": "mxpm:toggle-path-list"
+            },
+            {
+              "label": "Reset Project",
+              "command": "mxpm:reset-project"
             }
           ]
         }

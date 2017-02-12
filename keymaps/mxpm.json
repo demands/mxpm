@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-shift-p": "mxpm:togglePathList"
+    "ctrl-shift-p": "mxpm:toggle-path-list"
   }
 }
