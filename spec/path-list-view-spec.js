@@ -1,8 +1,8 @@
 'use babel';
 
-import MxpmView from '../lib/mxpm-view';
+import PathListView from '../lib/path-list-view';
 
-describe('MxpmView', () => {
+describe('PathListView', () => {
   it('has one valid test', () => {
     expect('life').toBe('easy');
   });

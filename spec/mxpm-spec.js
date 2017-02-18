@@ -1,11 +1,6 @@
 'use babel';
 
-import Mxpm from '../lib/mxpm';
-
-// Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
-//
-// To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
-// or `fdescribe`). Remove the `f` to unfocus the block.
+import Mxpm from '../lib/main';
 
 describe('Mxpm', () => {
   let workspaceElement, activationPromise;
@@ -15,58 +10,20 @@ describe('Mxpm', () => {
     activationPromise = atom.packages.activatePackage('mxpm');
   });
 
-  describe('when the mxpm:toggle event is triggered', () => {
+  describe('when the mxpm:toggle-path-list event is triggered', () => {
     it('hides and shows the modal panel', () => {
-      // Before the activation event the view is not on the DOM, and no panel
-      // has been created
-      expect(workspaceElement.querySelector('.mxpm')).not.toExist();
-
-      // This is an activation event, triggering it will cause the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'mxpm:toggle');
-
-      waitsForPromise(() => {
-        return activationPromise;
-      });
+      atom.commands.dispatch(workspaceElement, 'mxpm:toggle-path-list');
+      waitsForPromise(() => activationPromise);
 
       runs(() => {
-        expect(workspaceElement.querySelector('.mxpm')).toExist();
-
-        let mxpmElement = workspaceElement.querySelector('.mxpm');
+        let mxpmElement = workspaceElement.querySelector('.mxpm-path-list');
         expect(mxpmElement).toExist();
 
-        let mxpmPanel = atom.workspace.panelForItem(mxpmElement);
-        expect(mxpmPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'mxpm:toggle');
+        let mxpmPanel = atom.workspace.getModalPanels().find(p => p.isVisible());
+        expect(mxpmPanel.item[0]).toBe(mxpmElement);
+        
+        atom.commands.dispatch(workspaceElement, 'mxpm:toggle-path-list');
         expect(mxpmPanel.isVisible()).toBe(false);
-      });
-    });
-
-    it('hides and shows the view', () => {
-      // This test shows you an integration test testing at the view level.
-
-      // Attaching the workspaceElement to the DOM is required to allow the
-      // `toBeVisible()` matchers to work. Anything testing visibility or focus
-      // requires that the workspaceElement is on the DOM. Tests that attach the
-      // workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement);
-
-      expect(workspaceElement.querySelector('.mxpm')).not.toExist();
-
-      // This is an activation event, triggering it causes the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'mxpm:toggle');
-
-      waitsForPromise(() => {
-        return activationPromise;
-      });
-
-      runs(() => {
-        // Now we can test for view visibility
-        let mxpmElement = workspaceElement.querySelector('.mxpm');
-        expect(mxpmElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'mxpm:toggle');
-        expect(mxpmElement).not.toBeVisible();
       });
     });
   });
