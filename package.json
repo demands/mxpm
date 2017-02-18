@@ -5,7 +5,10 @@
   "description": "Quickly select active paths in your project using a fuzzy finder",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "mxpm:toggle-path-list"
+    "atom-workspace": [
+      "mxpm:toggle-path-list",
+      "mxpm:reset-project"
+    ]
   },
   "repository": "https://github.com/demands/mxpm",
   "license": "MIT",
